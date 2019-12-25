@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Todo</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p> -->
+  </head>
+
+  <body>
+
+
+
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+  <%= link_to 'TodoList', root_path, class:'my-0 mr-md-auto font-weight-normal' %>
+  <% if user_signed_in? %>
+    <li class="nav-item">
+      <%= link_to "Выход", destroy_user_session_path, method: :delete, class: "nav-link btn-outline-primary" %>
+    </li>
+  <% else %>
+    <li class="p-2">
+      <%= link_to "Вход", new_user_session_path, class: "nav-link btn-success" %>
+    </li>
+    <li class="p-2">
+      <%= link_to "Регистрация", new_user_registration_path, class: "nav-link btn-success" %>
+    </li>
+  <% end %>
+</div>
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<h1>Sozdaem</h1>
+<div class="container">
+
+  <div class="row">
+<%= form_with url: tasks_path, :class => 'input-group mb-3', :"data-no-turbolinks" => true do %>
+
+      <div class="input-group-prepend">
+        <label class="input " for="named">Название</label>
+      </div>
+      <%= text_field_tag(:title, nil, required: true, placeholder: 'Ex: Купить молока', :class => 'input-group mb-3') %>
+      <div class="input-group-prepend">
+        <label class="input " for="named">Описание</label>
+      </div>
+      <%= text_area_tag(:description, nil, required: true, :class => 'input-group mb-3') %>
+
+      <div class="input-group-prepend">
+        <label class="input " for="named">Дата окончания</label>
+      </div>
+      <%= date_field_tag(:date_fin, nil, required: true, placeholder: 'XXXX-MM-DD', :class => 'input-group mb-3') %>
+
+      <div class="input-group-prepend">
+        <label class="input" for="inputGroupSelect01333">Приоритет</label>
+      </div>
+      <%= select_tag(:priority, options_for_select([['Высокий', 3], ['Средний', 2], ['Низкий', 1]]), :class => 'custom-select mb-2') %>
+      <div class="input-group-prepend">
+        <label class="input" for="inputGroupSelect01333">Исполнитель</label>
+      </div>
+      <%= select_tag(:responsible, options_for_select(@options), :class => 'custom-select mb-2') %>
+
+      <%= submit_tag("Готово", :class => 'btn btn-success btn-lg float-left', :"data-no-turbolinks" => true) %>
+      <% end %>
+    </div>
+      <%= link_to :Back, :back, class:'btn btn-warning btn-lg float-right' %>
+
+    </div>

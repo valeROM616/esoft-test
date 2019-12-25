@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  date_fin: MyString
+  priority: 1
+  status: 1
+  creator: 1
+  responsible: 1
+
+two:
+  title: MyString
+  description: MyText
+  date_fin: MyString
+  priority: 1
+  status: 1
+  creator: 1
+  responsible: 1

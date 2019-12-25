@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>hello</h1>
+
+    <% @tasks.each do |task| %>
+
+    <h2> <%=task.title%> </h2>
+
+    <h3> <%=task.description%> </h3>
+
+    <% end %>
+
+  </body>
+</html>

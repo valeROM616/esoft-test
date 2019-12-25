@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="col-12" style="">
+<% if user_signed_in? %>
+<div class="crt">
+  <%= link_to "Добавить задачу", new_task_path, class: "nav-link btn-outline-primary" %>
+</div>
+
+<h2>Ваши задачи:</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col"><%= sortable "title", "Название" %></th>
+        <th scope="col"><%= sortable "date_fin", "Дата завершения" %> </th>
+        <th scope="col"><%= sortable "status", "Статус" %></th>
+        <th scope="col"><%= sortable "priority", "Приоритет" %></th>
+        <th scope="col"><%= sortable "responsible", "Ответственный" %></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @tasks.each do |task| %>
+    <tr>
+        <td><%=link_to task.title, task %></td>
+        <td><%=task.date_fin %></td>
+        <td><%=@status[task.status] %></td>
+        <td><%=@priority[task.priority] %></td>
+        <td><%=User.find(task.responsible).firstname%> <%= User.find(task.responsible).lastname %></td>
+        <td><%= link_to 'изменить статус', edit_task_path(task)%> </td>
+    </tr>
+    <% end %>
+    </tbody>
+  </table>
+    <% else %>
+    <h1>Пожалуйста, авторизируйтесь</h1>
+<% end %>
+</div>
+</div>
+  </body>
+</html>

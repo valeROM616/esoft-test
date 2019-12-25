@@ -1,0 +1,24 @@
+<h1>Изменить статус</h1>
+
+<%= form_for @task, :class => 'input-group mb-3', :"data-no-turbolinks" => true do %>
+  <div class="status">
+
+      <div class="row">
+      <p>
+      Задача:  <%= @task.title %> Текущий статус: <%= @status[@task.status] %>
+      </p>
+    </div>
+
+    <p>
+      <div class="row">
+          <div class="input-group-prepend">
+        <label class="input" for="inputGroupSelect01333">Изменить статус</label>
+      </div>
+      </p>
+      <%= select_tag(:status, options_for_select([['К выполнению', 1], ['Выполняется', 2], ['Выполнена', 3], ['Отменена', 4]]), :class => 'custom-select mb-2') %>
+
+      <%= submit_tag("Готово", :class => 'btn btn-success btn-lg float-left', :"data-no-turbolinks" => true) %>
+      <% end %>
+    </div>
+      <%= link_to :Back, :back, class:'btn btn-warning btn-lg float-right' %>
+    </div>

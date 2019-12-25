@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="col-md-3">
+      <h2>Название</h2>
+      <%=@task.title %>
+      <h2>Описание</h2>
+      <%=@task.description %>
+      <h2>Дата завершения</h2>
+      <%=@task.date_fin %>
+      <h2>Дата создания</h2>
+      <%=@task.created_at %>
+      <h2>Дата обновления</h2>
+      <%=@task.updated_at %>
+      <h2>Creator</h2>
+      <%=User.find(@task.creator).firstname %>       <%=User.find(@task.creator).lastname %>
+      <h2>Responsible</h2>
+      <%=User.find(@task.responsible).firstname %>       <%=User.find(@task.responsible).lastname %>
+      <h2>Priority</h2>
+      <%=@priority[@task.priority] %> <h2>Status</h2> <%=@status[@task.status] %>
+    </div>
+  </body>
+</html>

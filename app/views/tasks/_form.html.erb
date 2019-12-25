@@ -1,0 +1,21 @@
+<% form_for @task do |f| %>
+  <div class="form-control">
+    a
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="form-control">
+    b
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+  <div class="form-control">
+    v
+    <%= f.label :date_fin %>
+    <%= f.text_field :date_fin %>
+  </div>
+
+  <div class="form-control">
+    <%= f.submit 'Добавить' %>
+  </div>
+<% end %>
